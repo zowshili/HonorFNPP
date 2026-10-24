@@ -33,6 +33,8 @@ Therefore:
 - The common claim that "installing power-profiles-daemon is enough to switch
   performance" does not actually hold.
 
+Note: In theory, this can be applied to some Huawei MateBook laptops.
+
 ## What it does
 
 A userspace daemon keeps the two switches in sync in both directions:
