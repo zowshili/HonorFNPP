@@ -1,0 +1,105 @@
+name: Device support request
+description: Request or contribute support for a new HONOR MagicBook model
+title: "[device] "
+labels: ["device-support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping add a model. If you already have a profile, please
+        open a PR instead (see `docs/adding-device.md`). This issue is for
+        collecting the hardware data first.
+
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Marketing name, e.g. HONOR MagicBook X 16 Pro (2024)
+      placeholder: HONOR MagicBook ...
+    validations:
+      required: true
+
+  - type: input
+    id: dmi
+    attributes:
+      label: DMI vendor / product / board
+      description: Output of /sys/class/dmi/id/{sys_vendor,product_name,board_name}
+      placeholder: HONOR / FRI-HXX / FRI-HXX-PCB
+    validations:
+      required: true
+
+  - type: input
+    id: bios
+    attributes:
+      label: BIOS version
+      description: /sys/class/dmi/id/bios_version
+      placeholder: "1.15"
+    validations:
+      required: true
+
+  - type: input
+    id: system
+    attributes:
+      label: Distro and kernel
+      placeholder: Debian 13, kernel 7.2.6
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: desktops
+    attributes:
+      label: Desktop(s) used
+      options:
+        - label: GNOME
+        - label: KDE Plasma
+        - label: Deepin DDE
+        - label: Other
+
+  - type: textarea
+    id: check
+    attributes:
+      label: honorfnpp check output
+      description: Run `sudo honorfnpp check` (or `sudo ./bin/honorfnpp check` from the repo)
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: acpi
+    attributes:
+      label: DSDT evidence
+      description: |
+        Attach the `TUBF` field, `GTUB`/`STUB` methods, and the `WMAA`/PNP0C14
+        device path. See docs/adding-device.md for the commands.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: power
+    attributes:
+      label: Power numbers (optional)
+      description: Sustained package watts in smart/balanced and performance mode
+      placeholder: |
+        balanced: 35 W
+        performance: 45 W
+        method: turbostat, 12 threads, 60 s cooldown
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: testing
+    attributes:
+      label: Testing
+      options:
+        - label: I can test a profile on this machine
+        - label: I can provide a DSDT dump
+        - label: I already tried setting the EC bit via acpi_call
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Quirks, errors, links to forum threads, etc.
+    validations:
+      required: false
