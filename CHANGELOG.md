@@ -16,6 +16,8 @@ Initial public release of **HonorFNPP** (formerly `honor-fnp` / `honor-perfmode`
   overrides for testing new models.
 - CLI: `status [--json]`, `check`, `on`, `off`, `toggle`, `notify-test`,
   `daemon`; systemd unit; install/uninstall scripts; power test tool.
+- Start from `graphical.target` after `power-profiles-daemon` to avoid a
+  systemd ordering cycle at boot/shutdown.
 - Contribution workflow: `CONTRIBUTING.md`, `docs/adding-device.md`,
   PR template, device-support and bug issue forms.
 - Full Chinese and English README with a working language switch.

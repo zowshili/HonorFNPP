@@ -124,6 +124,7 @@ install -Dm644 "${ROOT}/CONTRIBUTING.md" \
     "${PREFIX}/share/doc/honorfnpp/CONTRIBUTING.md"
 
 systemctl daemon-reload
+systemctl disable honorfnpp.service 2>/dev/null || true
 systemctl enable honorfnpp.service
 systemctl restart honorfnpp.service
 sleep 1
