@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 — 2026-10-25
+
+- Start at `graphical.target` after `power-profiles-daemon`, fixing the
+  systemd ordering cycle that skipped the service at boot.
+- Installer now disables old unit symlinks before enabling the new unit.
+- Add `.gitignore`.
+- Restore executable bits on the CLI and install/uninstall/tool scripts.
+- Documentation: full Chinese/English README with a working language switch.
+
 ## 1.1.0 — 2026-10-24
 
 Initial public release of **HonorFNPP** (formerly `honor-fnp` / `honor-perfmode`).
@@ -16,8 +25,5 @@ Initial public release of **HonorFNPP** (formerly `honor-fnp` / `honor-perfmode`
   overrides for testing new models.
 - CLI: `status [--json]`, `check`, `on`, `off`, `toggle`, `notify-test`,
   `daemon`; systemd unit; install/uninstall scripts; power test tool.
-- Start from `graphical.target` after `power-profiles-daemon` to avoid a
-  systemd ordering cycle at boot/shutdown.
 - Contribution workflow: `CONTRIBUTING.md`, `docs/adding-device.md`,
   PR template, device-support and bug issue forms.
-- Full Chinese and English README with a working language switch.

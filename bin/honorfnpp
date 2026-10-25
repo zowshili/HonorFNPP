@@ -21,7 +21,7 @@ import subprocess
 import sys
 import time
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 def _config_path():
     env = os.environ.get("HONORFNPP_CONFIG") or os.environ.get("HONOR_PERFMODE_CONFIG")
